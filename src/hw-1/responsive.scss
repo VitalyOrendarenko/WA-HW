@@ -1,0 +1,27 @@
+@media screen and (max-width: 575px) {
+
+  .block-list_item {
+    flex-basis: 50%;
+  }
+
+  .block-list_item-big,
+  .block-list_item-blog {
+    flex-basis: 100%;
+  }
+
+  .block-list_item:last-child {
+    flex-basis: 100%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  body {
+    margin: 0;
+  }
+  .page-wrapper {
+    position: static;
+    top: initial;
+    left: initial;
+    transform: translate(0, 0);
+  }
+}
