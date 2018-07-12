@@ -10,7 +10,18 @@ const baseConf = (_path) => {
     const VENDORS_NAME = 'vendors';
     const entry = {
         index: ['babel-polyfill', './src/index/index.js'],
-        'hw-1': ['babel-polyfill', './src/hw-1/hw-1.js']
+        lesson_7: ['babel-polyfill', './src/lesson_7/lesson_7.js'],
+        lesson_9: ['babel-polyfill', './src/lesson_9/lesson_9.js'],
+        lesson_9_hw: ['babel-polyfill', './src/lesson_9_hw/lesson_9_hw.js'],
+        lesson_10: ['babel-polyfill', './src/lesson_10/lesson_10.js'],
+        lesson_10_hw: ['babel-polyfill', './src/lesson_10_hw/lesson_10_hw.js'],
+        lesson_11: ['babel-polyfill', './src/lesson_11/lesson_11.js'],
+        lesson_11_hw: ['babel-polyfill', './src/lesson_11_hw/lesson_11_hw.js'],
+        lesson_12: ['babel-polyfill', './src/lesson_12/lesson_12.js'],
+        lesson_12_hw: ['babel-polyfill', './src/lesson_12_hw/lesson_12_hw.js'],
+        lesson_13: ['babel-polyfill', './src/lesson_14/lesson_14.js'],
+        lesson_14: ['babel-polyfill', './src/lesson_14/lesson_14.js'],
+        test: ['babel-polyfill', './src/test/test.js']
     };
 
     const plugins = Object.keys(entry).reduce((acc, name) => {
@@ -71,6 +82,13 @@ const baseConf = (_path) => {
                     ]
                 },
                 {
+                    test: /\.css/,
+                    loader: ExtractTextPlugin.extract({
+                        fallback: 'style-loader',
+                        use: ['css-loader', 'autoprefixer-loader?browsers=last 5 version',]
+                    })
+                },
+                {
                     test: /\.scss/,
                     loader: ExtractTextPlugin.extract({
                         fallback: 'style-loader',
@@ -88,11 +106,11 @@ const baseConf = (_path) => {
                      * You can add here any file extension you want to get copied to your output
                      */
                     test: /\.(png|jpg|jpeg|gif|svg)$/,
-                    loader: 'file-loader?publicPath=../&name=assets/images/[name].[ext]'
+                    loader: 'file-loader?name=assets/images/[name].[ext]'
                 },
                 {
                     test: /\.(eot|ttf|woff|woff2)$/,
-                    loader: 'file-loader?publicPath=../&name=assets/fonts/[name].[ext]'
+                    loader: 'file-loader?name=assets/fonts/[name].[ext]'
                 }
             ]
         },

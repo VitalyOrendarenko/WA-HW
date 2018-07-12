@@ -1,0 +1,46 @@
+$option-padding: 10px;
+
+@mixin btnResetDefault {
+  border: none;
+  background: transparent;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+}
+
+
+.select {
+  position: relative;
+  border: 1px solid red;
+  width: 220px;
+  &__title {
+    @include btnResetDefault;
+    padding: $option-padding;
+    width: 100%;
+  }
+  &__options {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 5px rgba(0,0,0,.4);
+    transform: scaleY(0);
+    transform-origin: top center;
+    visibility: hidden;
+  }
+
+  &__control {
+    text-align: right;
+    width: 100%;
+    @include btnResetDefault;
+    padding: $option-padding;
+  }
+
+  &_expend {
+    .select__options {
+      transform: scaleY(1);
+      visibility: visible;
+    }
+  }
+}
