@@ -1,1 +1,1 @@
-import 'lesson_13.scss';
+import './lesson_13.scss';

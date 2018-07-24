@@ -1,0 +1,68 @@
+.bulb {
+  width: 50px; }
+  .bulb__lighter {
+    border: 1px solid red;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%; }
+  .bulb_active {
+    background-color: green; }
+    .bulb_active .bulb__lighter {
+      background-color: red; }
+    .bulb_active .bulb__control {
+      background-color: yellow; }
+.garland__output {
+  border: 1px solid green; }
+* {
+  box-sizing: border-box; }
+
+html {
+  font-size: 14px;
+  fot-family: sans-serif; }
+
+body, ul, ol, h1, h2, h3, h4, h5, hr, p {
+  padding: 0;
+  margin: 0; }
+
+a {
+  text-decoration: none; }
+
+li {
+  list-style: none; }
+.select {
+  position: relative;
+  border: 1px solid red;
+  width: 220px; }
+  .select__title {
+    border: none;
+    background: transparent;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    padding: 10px;
+    width: 100%; }
+  .select__options {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    box-shadow: 0 2px 4px 5px rgba(0, 0, 0, 0.4);
+    -ms-transform: scaleY(0);
+        transform: scaleY(0);
+    -ms-transform-origin: top center;
+        transform-origin: top center;
+    visibility: hidden; }
+  .select__control {
+    text-align: right;
+    width: 100%;
+    border: none;
+    background: transparent;
+    display: inline-block;
+    outline: none;
+    cursor: pointer;
+    padding: 10px; }
+  .select_expend .select__options {
+    -ms-transform: scaleY(1);
+        transform: scaleY(1);
+    visibility: visible; }
